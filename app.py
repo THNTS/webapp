@@ -3,8 +3,10 @@ app = Flask(__name__)
 
 # names = ['world', 'test', 'toast', 'mda', 'nothing']
 
-names = []
-
+with open('/opt/example_app/names') as f:
+    var = f.read()
+    names = eval(var)
+     
 @app.route('/')
 def hello_world():
     try:
@@ -36,7 +38,4 @@ def hello_world():
 #     return 'Hello, {}!\n'.format(names[3])
 
 if __name__ == '__main__':
-    with open('/opt/example_app/names') as f:
-        var = f.read()
-        names = eval(var)
     app.run()
