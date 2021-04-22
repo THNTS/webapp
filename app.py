@@ -5,14 +5,15 @@ app = Flask(__name__)
 var = []
 names = []
 
-def main(argv):
-    names = argv[1]
-    print(names)
-    app.run()
+# def main(argv):
+# #     names = argv[1]
+# #     print(names)
+#     app.run()
 
 @app.route('/')
 def hello_world():
-    return 'Hello, fucktard!\nHere r sum namez: {0}\n'.format(names)
+    return 'Hello, fucktard!\nHere r sum namez:'
+#     return 'Hello, fucktard!\nHere r sum namez: {0}\n'.format(names)
 
 # @app.route('/{0}'.format(names[0]))
 # def hello_world():
@@ -32,4 +33,5 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+#     main(sys.argv)
+    app.run()
