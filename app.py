@@ -37,5 +37,9 @@ def hello_world_2():
 def hello_world_3():
     return 'Hello, {}!\n'.format(names[3])
 
+@app.route('/{0}'.format(names[4]))
+def hello_world_4():
+    return 'Hello, {}!\n'.format(names[4])
+
 if __name__ == '__main__':
     app.run()
