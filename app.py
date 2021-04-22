@@ -21,21 +21,21 @@ def hello_world():
 # def hello_world():
 #     return 'Hello, fucktard!\n'
 
-@app.route('/zalupa/')
-def hello_world_zalupa():
-    return '/{0}'.format(names[0])
+@app.route('/{0}'.format(names[0])')
+def hello_world_0():
+    return 'Hello, {}!\n'.format(names[0])
 
-# @app.route('/{0}'.format(names[1]))
-# def hello_world():
-#     return 'Hello, {}!\n'.format(names[1])
+@app.route('/{0}'.format(names[1]))
+def hello_world_1():
+    return 'Hello, {}!\n'.format(names[1])
 
-# @app.route('/{0}'.format(names[2]))
-# def hello_world():
-#     return 'Hello, {}!\n'.format(names[2])
+@app.route('/{0}'.format(names[2]))
+def hello_world_2():
+    return 'Hello, {}!\n'.format(names[2])
 
-# @app.route('/{0}'.format(names[3]))
-# def hello_world():
-#     return 'Hello, {}!\n'.format(names[3])
+@app.route('/{0}'.format(names[3]))
+def hello_world_3():
+    return 'Hello, {}!\n'.format(names[3])
 
 if __name__ == '__main__':
     app.run()
