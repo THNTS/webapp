@@ -7,16 +7,15 @@ app = Flask(__name__)
 #     names = eval(var)
 # print(names)
 names = ['world', 'test', 'toast', 'mda', 'nothing']
-
-try:
-    with open('/opt/example_app/names') as f:
-        var = f.read()
-        names = eval(var)
-    print(names)
-    @app.route('/')
-    return 'Hello, fucktard!\n'
-except:
-    return "FUCK U"
+@app.route('/')
+def hello_world():
+    try:
+        with open('/opt/example_app/names') as f:
+            var = f.read()
+            names = eval(var)
+        return 'Hello, fucktard!\n'
+    except:
+        return "FUCK U"
     
 # @app.route('/')
 # def hello_world():
