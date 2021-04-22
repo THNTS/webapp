@@ -6,10 +6,8 @@ app = Flask(__name__)
 #     var = f.read()
 #     names = eval(var)
 # print(names)
+names = ['world', 'test', 'toast', 'mda', 'nothing']
 
-if __name__ == '__main__':
-    names = ['world', 'test', 'toast', 'mda', 'nothing']
-    app.run()
 
 @app.route('/')
 def hello_world():
@@ -30,3 +28,6 @@ def hello_world():
 @app.route('/{0}'.format(names[3]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[3])
+
+if __name__ == '__main__':
+    app.run()
