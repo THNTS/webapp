@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 # names = ['world', 'test', 'toast', 'mda', 'nothing']
 
-# with open('/opt/example_app/names') as f:
-#     var = f.read()
-#     names = eval(var)
+with open('/opt/example_app/names') as f:
+    var = f.read()
+    names = eval(var)
      
 # @app.route('/')
 # def hello_world():
@@ -22,10 +22,12 @@ app = Flask(__name__)
 # @app.route('/')
 # def hello_world():
 #     return 'Hello, fucktard!\n'
+def hello_world(word):
+    return 'Hello {}!\n'.word
+for name in names:
+      app.add_url_rule('/{0}'.format(name), 'hello_world', hello_world)
+# @app.route('/{0}'.format(sys.argv[1]))
 
-@app.route('/{0}'.format(sys.argv[1]))
-def hello_world_0():
-    return 'Hello {}!\n'.format(sys.argv[1])
 
 # @app.route('/{0}'.format(names[1]))
 # def hello_world_1():
