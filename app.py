@@ -27,9 +27,8 @@ def hello_world():
     return 'Hello, {}!\n'.format(names[3])
 
 if __name__ == '__main__':
-    with open('test.yml') as f:
-        var = yaml.load(f)
-        var = {k: v[0] for d in var for k, v in d.items()}
-    names = var['roles']['hello_pages']
+    with open('/opt/example_app/names') as f:
+        var = f.read()
+        names = eval(var)
     # print(names)
     app.run()
