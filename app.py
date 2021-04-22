@@ -9,19 +9,19 @@ names = []
 def hello_world():
     return 'Hello, fucktard!\n'
 
-@app.route('/'.format(names[0]))
+@app.route('/{0}'.format(names[0]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[0])
 
-@app.route('/'.format(names[1]))
+@app.route('/{0}'.format(names[1]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[1])
 
-@app.route('/'.format(names[2]))
+@app.route('/{0}'.format(names[2]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[2])
 
-@app.route('/'.format(names[3]))
+@app.route('/{0}'.format(names[3]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[3])
 
