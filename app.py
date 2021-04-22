@@ -22,7 +22,7 @@ def hello_world():
 #     return 'Hello, fucktard!\n'
 
 @app.route('/zalupa/')
-def hello_world():
+def hello_world_zalupa():
     return '/{0}'.format(names[0])
 
 # @app.route('/{0}'.format(names[1]))
