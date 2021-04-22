@@ -23,23 +23,23 @@ with open('/opt/example_app/names') as f:
 
 @app.route('/{0}'.format(names[0]))
 def hello_world_0():
-    return 'Hello, {}!\n'.format(names[0])
+    return 'Hello {}!\n'.format(names[0])
 
 @app.route('/{0}'.format(names[1]))
 def hello_world_1():
-    return 'Hello, {}!\n'.format(names[1])
+    return 'Hello {}!\n'.format(names[1])
 
 @app.route('/{0}'.format(names[2]))
 def hello_world_2():
-    return 'Hello, {}!\n'.format(names[2])
+    return 'Hello {}!\n'.format(names[2])
 
 @app.route('/{0}'.format(names[3]))
 def hello_world_3():
-    return 'Hello, {}!\n'.format(names[3])
+    return 'Hello {}!\n'.format(names[3])
 
 @app.route('/{0}'.format(names[4]))
 def hello_world_4():
-    return 'Hello, {}!\n'.format(names[4])
+    return 'Hello {}!\n'.format(names[4])
 
 # @app.errorhandler(404)
 # def page_not_found(error):
