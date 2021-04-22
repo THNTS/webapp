@@ -21,7 +21,7 @@ def hello_world():
 # def hello_world():
 #     return 'Hello, fucktard!\n'
 
-@app.route('/zalupa')
+@app.route('/zalupa/')
 def hello_world():
     return '/{0}'.format(names[0])
 
