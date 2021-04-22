@@ -1,5 +1,5 @@
 from flask import Flask
-import yaml
+import sys
 app = Flask(__name__)
 
 var = []
@@ -25,11 +25,13 @@ def hello_world():
 def hello_world():
     return 'Hello, {}!\n'.format(names[3])
 
-if __name__ == '__main__':
-#     with open('test.yml') as f:
-#         var = yaml.load(f)
-#         var = {k: v[0] for d in var for k, v in d.items()}
-#     names = var['roles']['hello_pages']
+def main(argv):
+    # with open('test.yml') as f:
+    #     var = yaml.load(f)
+    #     var = {k: v[0] for d in var for k, v in d.items()}
+    # names = var['roles']['hello_pages']
+    names = argv[1]
     app.run()
 
-#
+if __name__ == '__main__':
+    main(sys.argv)
