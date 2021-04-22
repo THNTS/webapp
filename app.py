@@ -2,12 +2,13 @@ from flask import Flask
 app = Flask(__name__)
 
 
-with open('/opt/example_app/names') as f:
-    var = f.read()
-    names = eval(var)
-print(names)
+# with open('/opt/example_app/names') as f:
+#     var = f.read()
+#     names = eval(var)
+# print(names)
 
 if __name__ == '__main__':
+    names = ['world', 'test', 'toast', 'mda', 'nothing']
     app.run()
 
 @app.route('/')
