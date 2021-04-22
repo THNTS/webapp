@@ -6,7 +6,7 @@ app = Flask(__name__)
 # with open('/opt/example_app/names') as f:
 #     var = f.read()
 #     names = eval(var)
-print(names)
+# print(names)
 @app.route('/')
 def hello_world():
     try:
