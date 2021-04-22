@@ -22,10 +22,10 @@ with open('/opt/example_app/names') as f:
 # @app.route('/')
 # def hello_world():
 #     return 'Hello, fucktard!\n'
-def hello_world(word):
-    return 'Hello {}!\n'.word
+def hello_world(name):
+    return 'Hello {}!\n'.format(name)
 for name in names:
-      app.add_url_rule('/{0}'.format(name), 'hello_world', hello_world)
+      app.add_url_rule('/<{0}>'.format(name), 'hello_world{0}'.format(name), hello_world)
 # @app.route('/{0}'.format(sys.argv[1]))
 
 
@@ -48,6 +48,16 @@ for name in names:
 # @app.errorhandler(404)
 # def page_not_found(error):
 #    return render_template('404.html', title = '404'), 404
+
+@app.route("/site-map")
+def site_map():
+    links = []
+    for rule in app.url_map.iter_rules():
+        # Filter out rules we can't navigate to in a browser
+        # and rules that require parameters
+        if "GET" in rule.methods and has_no_empty_params(rule):
+            url = url_for(rule.endpoint, **(rule.defaults or {}))
+            links.append((url, rule.endpoint))
 
 if __name__ == '__main__':
     app.run()
