@@ -8,6 +8,13 @@ app = Flask(__name__)
 with open('/opt/example_app/names') as f:
     var = f.read()
     names = eval(var)
+    
+@app.route('/<name>')
+def hello_world_1(name):
+    if name is in names:
+        return 'Hello {}!\n'.format(name)
+    else:
+        abort(404)
      
 # @app.route('/')
 # def hello_world():
@@ -22,10 +29,14 @@ with open('/opt/example_app/names') as f:
 # @app.route('/')
 # def hello_world():
 #     return 'Hello, fucktard!\n'
-def hello_world(name):
-    return 'Hello {}!\n'.format(name)
-for name in names:
-      app.add_url_rule('/<{0}>'.format(name), 'hello_world_{0}'.format(name), hello_world)
+
+
+# def hello_world(name):
+#     return 'Hello {}!\n'.format(name)
+# for name in names:
+#       app.add_url_rule('/<{0}>'.format(name), 'hello_world_{0}'.format(name), hello_world)
+
+
 # @app.route('/{0}'.format(sys.argv[1]))
 
 
