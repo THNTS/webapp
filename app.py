@@ -5,6 +5,11 @@ app = Flask(__name__)
 var = []
 names = []
 
+def main(argv):
+    names = argv[1]
+    print(names)
+    app.run()
+
 @app.route('/')
 def hello_world():
     return 'Hello, fucktard!\nHere r sum namez: {0}\n'.format(names)
@@ -25,10 +30,6 @@ def hello_world():
 # def hello_world():
 #     return 'Hello, {}!\n'.format(names[3])
 
-def main(argv):
-    names = argv[1]
-    print(names)
-    app.run()
 
 if __name__ == '__main__':
     main(sys.argv)
