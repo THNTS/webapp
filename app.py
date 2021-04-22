@@ -17,11 +17,11 @@ def hello_world():
 def hello_world():
     return 'Hello, {}!\n'.format(names[1])
 
-@app.route('/'.format(names[1]))
+@app.route('/'.format(names[2]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[2])
 
-@app.route('/'.format(names[1]))
+@app.route('/'.format(names[3]))
 def hello_world():
     return 'Hello, {}!\n'.format(names[3])
 
