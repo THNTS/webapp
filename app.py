@@ -23,9 +23,9 @@ app = Flask(__name__)
 # def hello_world():
 #     return 'Hello, fucktard!\n'
 
-@app.route('/{0}'.format(sys.argv[0]))
+@app.route('/{0}'.format(sys.argv[1]))
 def hello_world_0():
-    return 'Hello {}!\n'.format(sys.argv[0])
+    return 'Hello {}!\n'.format(sys.argv[1])
 
 # @app.route('/{0}'.format(names[1]))
 # def hello_world_1():
