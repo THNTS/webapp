@@ -15,7 +15,6 @@ def hello_world_1(name):
         return 'Hello {}!\n'.format(name)
     else:
         abort(404)
-    return 
         
 @app.errorhandler(404)
 def page_not_found(error):
