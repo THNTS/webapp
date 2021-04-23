@@ -15,6 +15,11 @@ def hello_world_1(name):
         return 'Hello {}!\n'.format(name)
     else:
         abort(404)
+    return 
+        
+@app.errorhandler(404)
+def page_not_found(error):
+   return render_template('404.html', title = '404'), 404
      
 # @app.route('/')
 # def hello_world():
