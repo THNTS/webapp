@@ -13,15 +13,24 @@ with open('/opt/example_app/names') as f:
 def hello_world_1(name):
     if name in names:
         return 'Hello {}!\n'.format(name)
+    else:
+        return  """<html>
+                <head><title>404 Not Found</title></head>
+                <body bgcolor="white">
+                <center><h1>404 Not Found</h1></center>
+                <hr><center>nginx/1.14.0 (Ubuntu)</center>
+                </body>
+                </html>"""
 
-@app.errorhandler(404)
-def page_not_found(error):
-    return "Aborted with 404", 404
+
+# @app.errorhandler(404)
+# def page_not_found(error):
+#     return "Aborted with 404", 404
     
-@app.route("/not_here")
-def not_here():
-    flask.abort(404)
-    return "This should not be returned"
+# @app.route("/not_here")
+# def not_here():
+#     flask.abort(404)
+#     return "This should not be returned"
      
 # @app.route('/')
 # def hello_world():
