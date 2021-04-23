@@ -11,7 +11,7 @@ with open('/opt/example_app/names') as f:
     
 @app.route('/<name>')
 def hello_world_1(name):
-    if name is in names:
+    if name in names:
         return 'Hello {}!\n'.format(name)
     else:
         abort(404)
