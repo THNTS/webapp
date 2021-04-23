@@ -20,7 +20,7 @@ def hello_world_1(name):
     if name in names:
         return 'Hello {}!\n'.format(name)
     else:
-        return 'bad request!', 404
+        return 'bad request!\n', 404
 
 # @app.route("/simulate404")
 # def simulate404():
