@@ -9,22 +9,25 @@ with open('/opt/example_app/names') as f:
     var = f.read()
     names = eval(var)
     
+@app.before_request
+def check_name():
+    str = request.path
+    if str[1:]:
+        abort(404)
+
 @app.route('/<name>')
 def hello_world_1(name):
     if name in names:
         return 'Hello {}!\n'.format(name)
-    else:
-        abort(404)
-        return 'Error 404'
 
 @app.route("/simulate404")
 def simulate404():
     abort(404)
     return "Whoops"
 
-@app.errorhandler(404)
-def not_found_error(error):
-    return render_template('404.html'), 404
+# @app.errorhandler(404)
+# def not_found_error(error):
+#     return render_template('404.html'), 404
 
 # @app.errorhandler(404)
 # def page_not_found(error):
